@@ -1,0 +1,12 @@
+apply plugin: 'war'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-webmvc:4.1.2.RELEASE'
+    testCompile 'org.testng:testng:6.8.8'
+    testCompile 'org.easymock:easymock:3.3'
+}
