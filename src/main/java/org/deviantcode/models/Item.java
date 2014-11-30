@@ -12,7 +12,6 @@ public class Item {
     private String color;
     private String serialNo;
     private BigDecimal price;
-    private String imageUrl;
     private Date created;
     private Date lastUpdated;
 
@@ -80,14 +79,6 @@ public class Item {
         this.price = price;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public Date getCreated() {
         return created;
     }
@@ -132,7 +123,6 @@ public class Item {
                 ", color='" + color + '\'' +
                 ", serialNo='" + serialNo + '\'' +
                 ", price=" + price +
-                ", imageUrl='" + imageUrl + '\'' +
                 ", created=" + created +
                 ", lastUpdated=" + lastUpdated +
                 '}';

@@ -28,7 +28,6 @@ public class JDBCItemDAO implements ItemDAO {
             item.setColor((String)row.get("color"));
             item.setSerialNo((String)row.get("serialno"));
             item.setPrice((BigDecimal) row.get("price"));
-            item.setImageUrl((String)row.get("image"));
             item.setCreated((Date)row.get("created"));
             item.setLastUpdated((Date)row.get("lastupdated"));
             items.add(item);
