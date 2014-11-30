@@ -1,6 +1,5 @@
 package org.deviantcode.controllers;
 
-import javafx.scene.effect.Reflection;
 import org.deviantcode.db.ItemDAO;
 import org.deviantcode.models.Item;
 import org.easymock.EasyMock;
@@ -8,8 +7,6 @@ import org.easymock.IMocksControl;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.testng.annotations.Test;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
