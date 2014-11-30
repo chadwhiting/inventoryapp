@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Item {
     private String name;
-    private String description;
+    private String descr;
     private String manufacturer;
     private String make;
     private String model;
@@ -23,12 +23,12 @@ public class Item {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescr() {
+        return descr;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescr(String descr) {
+        this.descr = descr;
     }
 
     public String getManufacturer() {
@@ -116,7 +116,7 @@ public class Item {
     public String toString() {
         return "Item{" +
                 "name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", description='" + descr + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +

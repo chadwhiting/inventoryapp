@@ -24,14 +24,14 @@ public class InventoryControllerTests {
         expect(mockItems.get(0)).andReturn(mockItem);
 
         ItemDAO mockDAO = mocksControl.createMock(ItemDAO.class);
-        expect(mockDAO.getAllItems()).andReturn(mockItems);
+        expect(mockDAO.getAll()).andReturn(mockItems);
 
         mocksControl.replay();
 
         InventoryController inventoryController = new InventoryController();
         ReflectionTestUtils.setField(inventoryController, "itemDAO", mockDAO);
 
-        List<Item> actualList = inventoryController.showInventory();
+        List<Item> actualList = inventoryController.getAll();
         Item actual = actualList.get(0);
         final Item expected = new Item();
         expected.setName(itemName);
@@ -48,7 +48,7 @@ public class InventoryControllerTests {
         expect(mockItems.get(0)).andReturn(mockItem);
 
         ItemDAO mockDAO = mocksControl.createMock(ItemDAO.class);
-        expect(mockDAO.getAllItems()).andReturn(mockItems);
+        expect(mockDAO.getAll()).andReturn(mockItems);
 
         mocksControl.replay();
 
@@ -71,7 +71,7 @@ public class InventoryControllerTests {
         expect(mockItem.getName()).andReturn(itemName);
 
         ItemDAO mockDAO = mocksControl.createMock(ItemDAO.class);
-        expect(mockDAO.getItemByName(anyObject(String.class))).andReturn(mockItem);
+        expect(mockDAO.get(anyObject(String.class))).andReturn(mockItem);
 
         mocksControl.replay();
 
@@ -81,7 +81,7 @@ public class InventoryControllerTests {
 
         final Item expected = new Item();
         expected.setName(itemName);
-        Item actual = inventoryController.getItemByName(itemName);
+        Item actual = inventoryController.get(itemName);
         assertEquals(actual.getName(), expected.getName());
     }
 }
