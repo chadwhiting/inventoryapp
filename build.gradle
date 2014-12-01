@@ -14,3 +14,7 @@ dependencies {
     testCompile 'org.easymock:easymock:3.3'
     testCompile 'org.springframework:spring-test:4.1.2.RELEASE'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
