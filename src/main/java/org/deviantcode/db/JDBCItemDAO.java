@@ -40,7 +40,7 @@ public class JDBCItemDAO implements ItemDAO {
     @Override
     public Item get(String name) {
         Item result = null;
-        List<Item> results =  jdbcTemplate.query("SELECT * FROM INVENTORY WHERE NAME = ?",
+        List<Item> results =  jdbcTemplate.query("SELECT * FROM INVENTORY WHERE name = ?",
                 new Object[] { name }, new BeanPropertyRowMapper<>(Item.class));
         if (results.size() > 0) {
             result = results.get(0);
@@ -57,7 +57,7 @@ public class JDBCItemDAO implements ItemDAO {
 
     @Override
     public void update(Item item, String descr, String manufacturer, String make, String model, String color, String serialno, BigDecimal price) {
-        String sql = "UPDATE INVENTORY SET descr = ?, manufacturer = ?, make = ?, model = ?, color = ?, serialno = ?, price = ? WHERE NAME = ?";
+        String sql = "UPDATE INVENTORY SET descr = ?, manufacturer = ?, make = ?, model = ?, color = ?, serialno = ?, price = ? WHERE name = ?";
         jdbcTemplate.update(sql,
                 (null == descr) ? item.getDescr() : descr,
                 (null == manufacturer) ? item.getManufacturer() : manufacturer,
@@ -71,6 +71,6 @@ public class JDBCItemDAO implements ItemDAO {
 
     @Override
     public void delete(String name) {
-        jdbcTemplate.update("DELETE FROM INVENTORY WHERE NAME = ?", name);
+        jdbcTemplate.update("DELETE FROM INVENTORY WHERE name = ?", name);
     }
 }
